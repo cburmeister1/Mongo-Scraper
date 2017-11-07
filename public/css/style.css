@@ -1,0 +1,39 @@
+body {
+    margin: 50px;
+    padding-top: 50px;
+    background-color: black; }
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%; }
+
+#mainNav .navbar-header {
+    margin-left: 30px; }
+
+#scrape {
+    margin: 8px 0px; }
+
+.panel-heading {
+    height: 55px; }
+
+h4 {
+    float: left;
+    width: 80%; }
+
+p {
+    font-size: 16px; }
+
+#link {
+    font-weight: bold;
+    text-decoration: underline; }
+
+.previousNotes {
+    float: left; }
+
+.btn-danger,
+.btn-success {
+    float: right; }
+
+.btn-danger {
+    margin-right: 10px; }

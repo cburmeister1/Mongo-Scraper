@@ -24,15 +24,11 @@ app.use(express.static("public"));
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
+// Use deployed Heroku database or local
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoScraper";
 mongoose.connect(MONGODB_URI, {
   useMongoClient: true
 });
-
-// mongoose.connect("mongodb://localhost/mongoScraper", {
-//   useMongoClient: true
-// });
-
 
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({

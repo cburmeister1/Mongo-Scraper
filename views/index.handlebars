@@ -1,32 +1,36 @@
-<div class="container">
-    <div class="col-md-12 jumbotron">
-        <div class="text-center">
-            <h1>Mongo Scraper</h1>
-            <h3>New York Times Edition</h3>
+<header class="masthead">
+    <div class="col-lg-12 text-center">
+        <h1 id="homeHeading">Mongo Scraper</h1>
+        <h3 id="subHeading">New York Times Edition</h3>
+    </div>
+</header>  
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {{#if article}}
+                    {{#each article}}
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="article-heading">{{this.title}}</h4>
+                            <button type="button" class="btn btn-warning save" data-id={{this._id}}>Save Article</button>
+                        </div>
+                        <div class="panel-body">
+                            <p> {{this.summary}}</p>
+                            <a id="link" href={{this.link}} target="_blank">{{this.link}}</a>
+                            <br><br>
+                        </div>
+                    </div>
+                    {{/each}}
+                {{else}}
+                <div class="panel panel-warning">
+                    <div class="panel-body">
+                    <h4>Uh Oh. Looks like we don't have any new articles.</h4>
+                    </div>
+                    </div>
+                {{/if}}
+            </div>
         </div>
     </div>
-</div>    
-
-<div class="col-md-12">
-    {{#if article}}
-        {{#each article}}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>{{this.title}}</h4>
-                <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
-            </div>
-            <div class="panel-body">
-                <p> {{this.summary}}</p>
-                <a id="link" href={{this.link}} target="_blank">{{this.link}}</a>
-                <br><br>
-            </div>
-        </div>
-        {{/each}}
-    {{else}}
-    <div class="panel panel-default">
-        <div class="panel-body">
-        <h4>Uh Oh. Looks like we don't have any new articles.</h4>
-        </div>
-        </div>
-    {{/if}}
-</div>
+</section>
